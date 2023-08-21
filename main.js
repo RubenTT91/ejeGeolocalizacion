@@ -1,5 +1,6 @@
 //Código para Localizar
 let nameUser;
+let frecuencia;
 let registro = "";
 let contenidoTabla = "";
 let Idinterval;
@@ -7,9 +8,16 @@ contenidoTabla =
   "<tr><th>StampTime</th><th>Name</th><th>Latitud</th><th>Longitud</th></tr>";
 
 function iniciar() {
+    Idinterval =0;
     nameUser = prompt("Nombre Usuario", "name");
+    frecuencia = Number(prompt("Indique un valor para el rastreo >0 ", "segundos"));
   if (!Idinterval) {
-    Idinterval = setInterval(position,1000);
+    if(!isNaN(frecuencia)&& Number.isInteger(frecuencia)&& frecuencia>0){
+        Idinterval = setInterval(position,(frecuencia*1000));
+    }else{
+        alert('Valor no valido. Digite un número Entero mayor a 0')
+        iniciar();
+    }
   }
 }
 
@@ -43,5 +51,4 @@ function onSucess(position) {
 function registrar(valores) {
   contenidoTabla += valores;
   document.getElementById("datos").innerHTML = contenidoTabla;
-  console.log(contenidoTabla);
 }
