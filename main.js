@@ -1,4 +1,5 @@
 //Código para Localizar
+let nameUser;
 let registro = "";
 let contenidoTabla = "";
 let Idinterval;
@@ -6,6 +7,7 @@ contenidoTabla =
   "<tr><th>StampTime</th><th>Name</th><th>Latitud</th><th>Longitud</th></tr>";
 
 function iniciar() {
+    nameUser = prompt("Nombre Usuario", "name");
   if (!Idinterval) {
     Idinterval = setInterval(position,1000);
   }
@@ -32,7 +34,7 @@ function onSucess(position) {
   //Ajuste de registro
   let registro = `<tr>
       <td>${tiempo}</td>
-      <td>nombre</td>
+      <td>${nameUser}</td>
       <td>${latitud}</td>
       <td>${longitud}</td></tr>`;
   registrar(registro);
