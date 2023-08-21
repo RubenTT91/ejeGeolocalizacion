@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="src/styles.css">
+    <title>Geolocalización</title>
+</head>
+<body>
+<section>
+    <h1>Extraer Ubicación</h1>    
+    <p>Haz clic en "Iniciar" para empezar la geolocalización</p>
+    <button  onclick="iniciar()" id="start">Iniciar</button>
+    <button  onclick="parar()" id="stop">Parar</button>
+
+    <table id="datos">
+        <tr>
+            <th>StampTime</th>
+            <th>Name</th>
+            <th>Latitud</th>
+            <th>Longitud</th>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+</main>
+<script src="main.js"></script> <!--Código de JS-->
+</body>
+
+</html>
